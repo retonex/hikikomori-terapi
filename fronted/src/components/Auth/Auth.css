@@ -2,92 +2,127 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 2rem;
-  background: var(--bg-color);
+  min-height: calc(100vh - 100px);
+  padding: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
-.auth-box {
+.auth-form {
   background: var(--card-bg);
-  padding: 2rem;
+  padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
+  transition: all 0.3s ease;
 }
 
-.auth-box h2 {
+.auth-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.auth-form h2 {
   text-align: center;
-  color: var(--heading-color);
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
+  font-weight: 500;
   color: var(--text-color);
+  font-size: 0.95rem;
 }
 
 .form-group input {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  border: 2px solid var(--border-color);
   border-radius: 8px;
-  background: var(--bg-color);
-  color: var(--text-color);
   font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 .auth-button {
   width: 100%;
-  padding: 1rem;
-  background: var(--primary-color);
+  padding: 14px;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  margin-top: 10px;
 }
 
 .auth-button:hover {
-  opacity: 0.9;
+  background: linear-gradient(135deg, #357abd 0%, #2868a9 100%);
+  transform: translateY(-2px);
 }
 
-.auth-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+.auth-button:active {
+  transform: translateY(0);
 }
 
 .error-message {
-  background: #ffebee;
-  color: #c62828;
-  padding: 1rem;
+  color: #ff4d4d;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: rgba(255, 77, 77, 0.1);
   border-radius: 8px;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
   text-align: center;
+  border: 1px solid rgba(255, 77, 77, 0.2);
 }
 
-.auth-links {
-  margin-top: 1.5rem;
-  text-align: center;
+/* Responsive tasarım için */
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 25px;
+  }
+
+  .auth-form h2 {
+    font-size: 1.75rem;
+  }
+
+  .form-group input {
+    padding: 10px 12px;
+  }
 }
 
-.auth-links p {
-  color: var(--text-color);
-  margin: 0.5rem 0;
+/* Karanlık mod için CSS değişkenleri */
+:root {
+  --bg-color: #f5f8fa;
+  --card-bg: #ffffff;
+  --text-color: #2c3e50;
+  --border-color: #e1e8ed;
+  --input-bg: #ffffff;
 }
 
-.auth-links span {
-  color: var(--primary-color);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.auth-links span:hover {
-  opacity: 0.8;
+[data-theme='dark'] {
+  --bg-color: #1a1a1a;
+  --card-bg: #2d2d2d;
+  --text-color: #e1e1e1;
+  --border-color: #404040;
+  --input-bg: #363636;
 } 

@@ -1,94 +1,82 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { authAPI } from '../../services/api';
 import './Auth.css';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { login } = useAuth();
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const { login } = useAuth();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        setIsLoading(true);
+        
+        try {
+            const response = await authAPI.login(email, password);
+            if (response.token) {
+                login(response.token);
+                navigate('/gunlugum');
+            }
+        } catch (err) {
+            setError('Giriş yapılırken bir hata oluştu. Lütfen bilgilerinizi kontrol edin.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
+    return (
+        <div className="auth-container">
+            <form onSubmit={handleSubmit} className="auth-form">
+                <h2>Hoş Geldiniz</h2>
+                {error && <div className="error-message">{error}</div>}
+                
+                <div className="form-group">
+                    <label>E-posta Adresi</label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="ornek@email.com"
+                        required
+                        disabled={isLoading}
+                    />
+                </div>
 
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+                <div className="form-group">
+                    <label>Şifre</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="••••••••"
+                        required
+                        disabled={isLoading}
+                    />
+                </div>
 
-      const data = await response.json();
+                <button 
+                    type="submit" 
+                    className="auth-button"
+                    disabled={isLoading}
+                >
+                    {isLoading ? 'Giriş Yapılıyor...' : 'Giriş Yap'}
+                </button>
 
-      if (!response.ok) {
-        throw new Error(data.message || 'Giriş yapılırken bir hata oluştu');
-      }
-
-      // Context'e kullanıcı bilgilerini kaydet
-      login(data.user, data.token);
-
-      // Ana sayfaya yönlendir
-      navigate('/gunlugum');
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="auth-container">
-      <div className="auth-box">
-        <h2>Giriş Yap</h2>
-        {error && <div className="error-message">{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>E-posta</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Şifre</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" disabled={loading} className="auth-button">
-            {loading ? 'Giriş Yapılıyor...' : 'Giriş Yap'}
-          </button>
-        </form>
-        <div className="auth-links">
-          <p>Hesabınız yok mu? <span onClick={() => navigate('/kayit')}>Kayıt Ol</span></p>
-          <p><span onClick={() => navigate('/sifremi-unuttum')}>Şifremi Unuttum</span></p>
+                <p style={{ textAlign: 'center', marginTop: '20px', color: 'var(--text-color)' }}>
+                    Hesabınız yok mu? 
+                    <Link to="/kayit" style={{ color: '#4a90e2', marginLeft: '5px', textDecoration: 'none' }}>
+                        Kayıt Ol
+                    </Link>
+                </p>
+            </form>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default Login; 
+export default Login;

@@ -1,119 +1,101 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import { authAPI } from '../../services/api';
 import './Auth.css';
 
 const Register = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const { login } = useAuth();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        setIsLoading(true);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
+        if (password !== confirmPassword) {
+            setError('Şifreler eşleşmiyor!');
+            setIsLoading(false);
+            return;
+        }
 
-    // Şifre kontrolü
-    if (formData.password !== formData.confirmPassword) {
-      setError('Şifreler eşleşmiyor');
-      return;
-    }
+        try {
+            const response = await authAPI.register(email, password);
+            if (response.token) {
+                login(response.token);
+                navigate('/gunlugum');
+            }
+        } catch (err) {
+            setError('Kayıt olurken bir hata oluştu. Lütfen tekrar deneyin.');
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
-    setLoading(true);
+    return (
+        <div className="auth-container">
+            <form onSubmit={handleSubmit} className="auth-form">
+                <h2>Kayıt Ol</h2>
+                {error && <div className="error-message">{error}</div>}
+                
+                <div className="form-group">
+                    <label>E-posta Adresi</label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="ornek@email.com"
+                        required
+                        disabled={isLoading}
+                    />
+                </div>
 
-    try {
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
+                <div className="form-group">
+                    <label>Şifre</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="••••••••"
+                        required
+                        disabled={isLoading}
+                    />
+                </div>
 
-      const data = await response.json();
+                <div className="form-group">
+                    <label>Şifre Tekrar</label>
+                    <input
+                        type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        placeholder="••••••••"
+                        required
+                        disabled={isLoading}
+                    />
+                </div>
 
-      if (!response.ok) {
-        throw new Error(data.message || 'Kayıt olurken bir hata oluştu');
-      }
+                <button 
+                    type="submit" 
+                    className="auth-button"
+                    disabled={isLoading}
+                >
+                    {isLoading ? 'Kayıt Yapılıyor...' : 'Kayıt Ol'}
+                </button>
 
-      // Başarılı kayıt sonrası giriş sayfasına yönlendir
-      navigate('/giris', { state: { message: 'Kayıt başarılı! Lütfen giriş yapın.' } });
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="auth-container">
-      <div className="auth-box">
-        <h2>Kayıt Ol</h2>
-        {error && <div className="error-message">{error}</div>}
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Ad Soyad</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>E-posta</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Şifre</label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-              minLength={6}
-            />
-          </div>
-          <div className="form-group">
-            <label>Şifre Tekrar</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              required
-              minLength={6}
-            />
-          </div>
-          <button type="submit" disabled={loading} className="auth-button">
-            {loading ? 'Kayıt Yapılıyor...' : 'Kayıt Ol'}
-          </button>
-        </form>
-        <div className="auth-links">
-          <p>Zaten hesabınız var mı? <span onClick={() => navigate('/giris')}>Giriş Yap</span></p>
+                <p style={{ textAlign: 'center', marginTop: '20px', color: 'var(--text-color)' }}>
+                    Zaten hesabınız var mı? 
+                    <Link to="/giris" style={{ color: '#4a90e2', marginLeft: '5px', textDecoration: 'none' }}>
+                        Giriş Yap
+                    </Link>
+                </p>
+            </form>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
-export default Register; 
+export default Register;
