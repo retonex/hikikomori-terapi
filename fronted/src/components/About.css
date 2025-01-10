@@ -1,0 +1,106 @@
+.about {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #333;
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.about h1:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #6B73FF;
+  margin: 1rem auto;
+}
+
+.about-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+.about-content p {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.section-title {
+  color: #6B73FF;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 1rem;
+  font-weight: 600;
+}
+
+.platform-goals {
+  background: #f8f9ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+}
+
+.platform-goals ul {
+  list-style: none;
+  padding: 0;
+}
+
+.platform-goals li {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.platform-goals li:before {
+  content: '•';
+  color: #6B73FF;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.value-item {
+  background: #f8f9ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.value-item h4 {
+  color: #6B73FF;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+  
+  .about-content {
+    padding: 2rem;
+  }
+  
+  .about h1 {
+    font-size: 2rem;
+  }
+} 
