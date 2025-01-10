@@ -1,0 +1,176 @@
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+}
+
+/* Dark theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #6B73FF;
+  --secondary-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --border-color: #dddddd;
+  --heading-color: #333333;
+  --nav-text-color: #333333;
+  --card-text-color: #333333;
+  --link-color: #6B73FF;
+}
+
+body.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --primary-color: #8f94ff;
+  --secondary-color: #2d2d2d;
+  --card-bg: #2d2d2d;
+  --border-color: #404040;
+  --heading-color: #ffffff;
+  --nav-text-color: #ffffff;
+  --card-text-color: #ffffff;
+  --link-color: #8f94ff;
+}
+
+/* Global theme styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-logo, .nav-link {
+  color: var(--nav-text-color) !important;
+}
+
+/* Card styles */
+.journal-form, .journal-entry, .module-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--card-text-color);
+}
+
+/* Form element styles */
+input, textarea, select {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+/* Link styles */
+a {
+  color: var(--link-color);
+}
+
+/* Module detail styles */
+.module-detail {
+  color: var(--text-color);
+}
+
+.module-description, .section-content {
+  color: var(--text-color);
+}
+
+/* Footer styles */
+.footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Journal specific styles */
+.journal-entry p {
+  color: var(--text-color);
+}
+
+.entry-date {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.activity-tag {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.activity-option {
+  color: var(--text-color);
+}
+
+.activity-option label {
+  color: var(--text-color);
+}
+
+.activities-selector label {
+  color: var(--text-color);
+}
+
+.activities-options label {
+  color: var(--text-color) !important;
+}
+
+/* Mood selector styles */
+.mood {
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mood:hover {
+  transform: scale(1.2);
+  background-color: var(--secondary-color);
+}
+
+.mood.selected {
+  transform: scale(1.2);
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Module card specific styles */
+.module-card h3, .module-card p {
+  color: var(--card-text-color);
+}
+
+/* Hero section styles */
+.hero-content h1, .hero-content p {
+  color: var(--text-color);
+}
+
+/* About and Contact page styles */
+.about-content, .contact-content {
+  color: var(--text-color);
+} 
