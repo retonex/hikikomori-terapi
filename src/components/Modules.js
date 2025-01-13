@@ -7,8 +7,11 @@ import internetAddiction from '../assets/internet-addiction.jpg';
 import socialization from '../assets/socialization.jpg';
 import routine from '../assets/routine.jpg';
 import relaxation from '../assets/relaxation.jpg';
+<<<<<<< HEAD
 import gamingAddiction from '../assets/gaming-addiction.jpg';
 import { FaGamepad } from 'react-icons/fa';
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 
 const Modules = () => {
   const navigate = useNavigate();
@@ -48,6 +51,7 @@ const Modules = () => {
       description: 'Anksiyete ve stresle başa çıkma egzersizleri',
       icon: '🧘',
       image: relaxation
+<<<<<<< HEAD
     },
     {
       id: 'oyun-bagimliligi',
@@ -55,6 +59,8 @@ const Modules = () => {
       description: 'Bilişsel Davranışçı Terapi teknikleriyle oyun bağımlılığını yönetme ve sağlıklı oyun alışkanlıkları geliştirme rehberi.',
       image: gamingAddiction,
       icon: <FaGamepad />
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
     }
   ];
 

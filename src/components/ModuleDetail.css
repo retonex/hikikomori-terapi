@@ -48,7 +48,11 @@
 }
 
 .module-goals h3 {
+<<<<<<< HEAD
   color: #6B73FF !important;
+=======
+  color: #6B73FF;
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
   margin-bottom: 1rem;
 }
 
@@ -58,7 +62,10 @@
 }
 
 .module-goals li {
+<<<<<<< HEAD
   color: #333 !important;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
   margin: 0.8rem 0;
   padding-left: 1.5rem;
   position: relative;
@@ -66,7 +73,11 @@
 
 .module-goals li:before {
   content: '•';
+<<<<<<< HEAD
   color: #6B73FF !important;
+=======
+  color: #6B73FF;
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
   position: absolute;
   left: 0;
 }
@@ -298,6 +309,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+<<<<<<< HEAD
 } 
 
 /* Dark mode için yeni kurallar */
@@ -445,4 +457,6 @@
 
 [data-theme='dark'] .section-content {
   background: #2d2d2d;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 } 

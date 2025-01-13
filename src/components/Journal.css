@@ -77,6 +77,7 @@
   transform: scale(1.2);
 }
 
+<<<<<<< HEAD
 .activities-selector {
   margin-bottom: 1.5rem;
   background: #fff !important;
@@ -92,13 +93,18 @@
   background: #fff !important;
 }
 
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 .activities-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 0.5rem;
+<<<<<<< HEAD
   background: #fff !important;
   padding: 1rem;
   border-radius: 8px;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 }
 
 .activity-option {
@@ -107,8 +113,11 @@
   gap: 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
+<<<<<<< HEAD
   color: #333 !important;
   background: #fff !important;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 }
 
 .activity-option input[type="checkbox"] {
@@ -117,10 +126,13 @@
   accent-color: #6B73FF;
 }
 
+<<<<<<< HEAD
 .activity-option label {
   color: #333 !important;
 }
 
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 .submit-button {
   width: 100%;
   padding: 1rem;
@@ -150,6 +162,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
 .journal-entry h3 {
   color: #333 !important;
   margin-bottom: 0.5rem;
@@ -160,6 +173,8 @@
   line-height: 1.6;
 }
 
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 .entry-header {
   display: flex;
   justify-content: space-between;
@@ -168,7 +183,11 @@
 }
 
 .entry-date {
+<<<<<<< HEAD
   color: #666 !important;
+=======
+  color: #666;
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
   font-size: 0.9rem;
 }
 
@@ -204,11 +223,19 @@
 }
 
 .activity-tag {
+<<<<<<< HEAD
   background: #f8f9ff !important;
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.9rem;
   color: #333 !important;
+=======
+  background: #f0f0f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: #333;
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 }
 
 @media (max-width: 768px) {
@@ -223,6 +250,7 @@
   .mood {
     font-size: 1.2rem;
   }
+<<<<<<< HEAD
 } 
 
 /* Dark mode için yeni kurallar */
@@ -316,4 +344,6 @@
   background: transparent !important;
   font-size: 1.1rem;
   margin-bottom: 1rem;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 } 

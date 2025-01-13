@@ -88,6 +88,7 @@
   .modules-grid {
     grid-template-columns: 1fr;
   }
+<<<<<<< HEAD
 }
 
 /* Dark mode için yeni kurallar */
@@ -142,4 +143,6 @@
   background: #1a1a1a;
   border-left-color: #6B73FF;
   color: #ccc;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 } 

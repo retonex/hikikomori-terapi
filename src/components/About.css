@@ -46,6 +46,7 @@
   font-weight: 600;
 }
 
+<<<<<<< HEAD
 .platform-title {
   color: #6B73FF !important;
   font-size: 1.5rem;
@@ -54,6 +55,10 @@
 
 .platform-goals {
   background: #f8f9ff !important;
+=======
+.platform-goals {
+  background: #f8f9ff;
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
   padding: 1.5rem;
   border-radius: 12px;
   margin: 1.5rem 0;
@@ -68,12 +73,19 @@
   margin: 0.8rem 0;
   padding-left: 1.5rem;
   position: relative;
+<<<<<<< HEAD
   color: #333 !important;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 }
 
 .platform-goals li:before {
   content: '•';
+<<<<<<< HEAD
   color: #6B73FF !important;
+=======
+  color: #6B73FF;
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
   font-size: 1.5rem;
   position: absolute;
   left: 0;
@@ -110,6 +122,7 @@
   .about h1 {
     font-size: 2rem;
   }
+<<<<<<< HEAD
 } 
 
 /* Dark mode için yeni kurallar */
@@ -188,4 +201,6 @@
 [data-theme='dark'] .highlight-box {
   background: #1a1a1a;
   border-left: 4px solid #6B73FF;
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
 } 

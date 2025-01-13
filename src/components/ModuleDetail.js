@@ -458,6 +458,7 @@ Bu modül, en az stres verici durumlardan başlayarak, kademeli olarak daha zorl
 • Toplam 15-20 dakika`
         }
       ]
+<<<<<<< HEAD
     },
     'oyun-bagimliligi': {
       title: 'Oyun Bağımlılığıyla Mücadele',
@@ -563,6 +564,8 @@ Hatırlayın: Oyunlar eğlence için vardır, kaçış için değil.`
           description: 'Oyun dışı aktiviteler için haftalık plan oluşturun.'
         }
       ]
+=======
+>>>>>>> f3d1fd6d22cf79e721fbd5679683f7fbcda7da83
     }
   };
 
