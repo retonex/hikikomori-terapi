@@ -1,0 +1,448 @@
+.module-detail {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+  min-height: 100vh;
+}
+
+.module-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.module-detail h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.module-detail h1:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #6B73FF;
+  margin: 1rem auto;
+}
+
+.module-description {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.module-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.module-goals {
+  background: #f8f9ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.module-goals h3 {
+  color: #6B73FF !important;
+  margin-bottom: 1rem;
+}
+
+.module-goals ul {
+  list-style: none;
+  padding: 0;
+}
+
+.module-goals li {
+  color: #333 !important;
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.module-goals li:before {
+  content: '•';
+  color: #6B73FF !important;
+  position: absolute;
+  left: 0;
+}
+
+.module-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.module-section {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.section-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-header:hover {
+  background-color: #f8f9ff;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-icon {
+  color: #6B73FF;
+  font-size: 1.5rem;
+}
+
+.section-header h2 {
+  color: #333;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.arrow {
+  color: #6B73FF;
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  padding: 0 1.5rem 1.5rem;
+  overflow: hidden;
+}
+
+.section-content p {
+  line-height: 1.8;
+  color: #444;
+  white-space: pre-line;
+  margin-bottom: 1rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #6B73FF;
+}
+
+.checklist-item span {
+  color: #444;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .module-detail {
+    padding: 4rem 1rem;
+  }
+  
+  .module-detail h1 {
+    font-size: 2rem;
+  }
+  
+  .section-header {
+    padding: 1rem;
+  }
+  
+  .section-content {
+    padding: 0 1rem 1rem;
+  }
+} 
+
+.test-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.evaluate-button {
+  background: #6B73FF;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.evaluate-button:hover {
+  background: #5158CC;
+  transform: translateY(-2px);
+}
+
+.evaluate-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.test-results {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #f8f9ff;
+  border-radius: 12px;
+  animation: fadeIn 0.5s ease;
+}
+
+.test-results h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.severity-level {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.severity {
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.severity.low {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.severity.medium {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.severity.high {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.recommendations {
+  margin-top: 2rem;
+}
+
+.recommendations h4 {
+  color: #6B73FF;
+  margin-bottom: 1rem;
+}
+
+.recommendation-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.recommendation-category {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recommendation-category h5 {
+  color: #6B73FF;
+  margin-bottom: 1rem;
+}
+
+.recommendation-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recommendation-category li {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.recommendation-category li:before {
+  content: '•';
+  color: #6B73FF;
+  position: absolute;
+  left: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+/* Dark mode için yeni kurallar */
+[data-theme='dark'] .module-detail {
+  background: linear-gradient(to bottom, #1a1a1a, #2d2d2d);
+}
+
+[data-theme='dark'] .module-detail-container {
+  background: #2d2d2d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hedefler kutucuğu için */
+[data-theme='dark'] .module-goals {
+  background: #f8f9ff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Alt başlıklar için */
+[data-theme='dark'] .module-section {
+  background: #2d2d2d;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .module-section h2,
+[data-theme='dark'] .module-section h3,
+[data-theme='dark'] .module-section p,
+[data-theme='dark'] .module-section li {
+  color: #fff;
+}
+
+/* Bullet point'ler için */
+[data-theme='dark'] .module-section ul li::before {
+  color: #6B73FF;
+}
+
+/* Özel vurgu kutuları için */
+[data-theme='dark'] .highlight-box {
+  background: #1a1a1a;
+  border-left: 4px solid #6B73FF;
+}
+
+/* Tablo arkaplanları için */
+[data-theme='dark'] table {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+[data-theme='dark'] th,
+[data-theme='dark'] td {
+  border-color: #404040;
+  color: #fff;
+}
+
+[data-theme='dark'] th {
+  background: #1a1a1a;
+}
+
+/* Alıntılar için */
+[data-theme='dark'] blockquote {
+  background: #1a1a1a;
+  border-left-color: #6B73FF;
+  color: #ccc;
+}
+
+/* İpucu kutuları için */
+[data-theme='dark'] .tip-box {
+  background: #1a1a1a;
+  border: 1px solid #404040;
+}
+
+/* Önemli notlar için */
+[data-theme='dark'] .important-note {
+  background: #1a1a1a;
+  border: 1px solid #6B73FF;
+}
+
+/* Adım adım talimatlar için */
+[data-theme='dark'] .step-by-step {
+  background: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+[data-theme='dark'] .step-by-step li {
+  border-bottom: 1px solid #404040;
+}
+
+/* Bağlantılar için */
+[data-theme='dark'] a {
+  color: #6B73FF;
+}
+
+[data-theme='dark'] a:hover {
+  color: #5158CC;
+} 
+
+/* Dark mode için hedefler kısmının düzeltmeleri */
+[data-theme='dark'] .module-description {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+[data-theme='dark'] .module-description p {
+  color: #fff;
+}
+
+[data-theme='dark'] .module-goals {
+  background: #f8f9ff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .module-goals h3 {
+  color: #6B73FF;
+}
+
+[data-theme='dark'] .module-goals ul li {
+  color: #333;
+}
+
+[data-theme='dark'] h1 {
+  color: #fff;
+}
+
+/* Test sonuçları için */
+[data-theme='dark'] .test-results {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .test-results h3 {
+  color: #fff;
+}
+
+/* Açılır kapanır bölümler için */
+[data-theme='dark'] .section-header {
+  background: #2d2d2d;
+}
+
+[data-theme='dark'] .section-header:hover {
+  background: #363636;
+}
+
+[data-theme='dark'] .section-header h2 {
+  color: #fff;
+}
+
+[data-theme='dark'] .section-content {
+  background: #2d2d2d;
+} 

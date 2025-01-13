@@ -1,30 +1,44 @@
 {
-  "name": "hikikomori-terapi-backend",
-  "version": "1.0.0",
-  "description": "Hikikomori Terapi Backend API",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "build": "npm install",
-    "dev": "nodemon server.js"
-  },
-  "keywords": [
-    "hikikomori",
-    "terapi",
-    "api",
-    "backend"
-  ],
-  "author": "YC",
-  "license": "ISC",
+  "name": "hikikomori-terapi",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.5.0"
+    "cra-template": "1.2.0",
+    "framer-motion": "^11.16.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0",
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^4.2.4"
   },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
-} 
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
